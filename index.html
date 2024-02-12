@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravellHunt</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="../dist/tailwind.css">
+
+    <!-- Alpine js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <!-- IonIcons -->
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+
+
+</head>
+<body>
+    <nav  class="py-8 px-4  lg:px-16 " x-data="{navOpen : false}">
+        <div class="container mx-auto">
+            <div class="flex justify-between items-center">
+                <img class="w-32 order-1 sm:order-2 mx-2" src="../public/assets/logo.png" alt="" >
+                <ion-icon class="cursor-pointer order-2 sm:order-1 lg:hidden" @click="navOpen = !navOpen" name="menu"></ion-icon>
+                <div class="hidden lg:block order-2 ">
+                    <ul class="flex gap-8 ">
+                        <li><a href="" class="text-abu font-bold text-sm">Home</a></li>
+                        <li><a href="" class="text-abu opacity-50 font-normal font-poppins  text-sm">Discover</a></li>
+                        <li><a href="" class="text-abu opacity-50 font-normal font-poppins text-sm">Special Deals</a></li>
+                        <li><a href="" class="text-abu opacity-50 font-normal font-poppins text-sm">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="order-3 hidden sm:block "> 
+                    <button class="grow bg-white px-4 py-2 font-bold text-abu rounded-full text-sm">Login</button>
+                    <button class="grow bg-biru px-4 py-2 font-bold text-white rounded-full text-sm">Sign Up</button>
+                </div>
+            </div>
+        </div>
+        <div x-show="navOpen" x-data="{open : false}" class="fixed bottom-0 left-0 w-full p-4 bg-white lg:hidden"
+            x-transition:enter="transition ease-out duration-300"
+            x-transition:enter-start="opacity-0 scale-90"
+            x-transition:enter-end="opacity-100 scale-100"
+            x-transition:leave="transition ease-in duration-300"
+            x-transition:leave-start="opacity-100 scale-100"
+            x-transition:leave-end="opacity-0 scale-90">
+            <ul class="flex justify-between">
+                <li>
+                    <button class="flex justify-center flex-col items-center gap-1">
+                        <ion-icon name="home" class="text-2xl text-abu"></ion-icon>
+                        <spaan class="text-abu text-base font-bold">Home</spaan>
+                    </button>
+                </li>
+                <li>
+                    <button class="flex justify-center flex-col items-center gap-1">
+                        <ion-icon name="search" class="text-2xl text-abu opacity-50 "></ion-icon>
+                        <spaan class="text-abu opacity-50 text-base font-normal">Discover</spaan>
+                    </button>
+                </li>
+                <li>
+                    <button class="flex justify-center flex-col items-center gap-1">
+                        <ion-icon name="bonfire" class="text-2xl text-abu opacity-50 "></ion-icon>
+                        <spaan class="text-abu opacity-50 text-base font-normal">Special</spaan>
+                    </button>
+                </li>
+                <li>
+                    <button class="flex justify-center flex-col items-center gap-1">
+                        <ion-icon name="call" class="text-2xl text-abu opacity-50 "></ion-icon>
+                        <spaan class="text-abu opacity-50 text-base font-normal">Contact</spaan>
+                    </button>
+                </li>
+                <li>
+                    <button @click="open = !open" class="flex justify-center flex-col items-center gap-1">
+                        <ion-icon name="logo-freebsd-devil" class="text-2xl text-abu opacity-50 "></ion-icon>
+                        <spaan class="text-abu opacity-50 text-base font-normal">More</spaan>
+                    </button>
+                </li>
+            </ul>
+            <div x-show="open" 
+                class="absolute bottom-24 left-1/2 -translate-x-1/2 flex gap-4 w-3/4 "
+                x-transition:enter="transition ease-out duration-300"
+                x-transition:enter-start="opacity-0 scale-90"
+                x-transition:enter-end="opacity-100 scale-100"
+                x-transition:leave="transition ease-in duration-300"
+                x-transition:leave-start="opacity-100 scale-100"
+                x-transition:leave-end="opacity-0 scale-90">
+                <button class="grow bg-white px-8 py-4 font-bold text-abu rounded-full text-sm">Login</button>
+                <button class="grow bg-biru px-8 py-4 font-bold text-white rounded-full text-sm">Sign Up</button>
+            </div>
+        </div>
+    </nav>
+
+    <section>
+        <div class="container  mx-auto lg:px-16">
+            <div class="grid grid-cols-12 text-center lg:text-left">
+                <div class="col-span-12 lg:col-span-4 py-4 lg:pt-12 order-2 lg:order-1 px-2">
+                    <h1 class="text-[37px] md:text-[47px] font-bold">Leave Your <span class="text-biru">Mark in New Places</span> with Us</h1>
+                    <div class="text-xs text-abu opacity-75 py-4">Explore Dream Destinations and Create Timeless Memories with the Best Travel Services</div>
+                    <button class="bg-biru w-full md:w-44 py-4 px-8 mt-5 text-white rounded-xl shadow-md">Get Started</button>
+                </div>
+                <div class="col-span-12 lg:col-span-8 py-4 order-1 lg:order-2">
+                    <img src="../public/assets/img1.png" alt="" class="mx-auto lg:w-10/12">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="lg:p-16 py-16 px-4 overflow-x-hidden">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-12 text-center lg:text-left">
+                <div class="lg:col-span-4 col-span-12 gap-4 flex flex-col justify-center lg:px-4">
+                    <span class="text-biru font-poppins font-semibold leading-tight">SERVICE</span>
+                    <h1 class="font-bold leading-tight text-[32px] tracking-wide">Our top value categories for you</h1>
+                </div>
+                <div class=" col-span-12 lg:col-span-8  flex flex-col sm:flex-row w-auto gap-5 lg:mt-0 mt-12 items-center">
+                    <div class="flex flex-col justify-center items-center py-16 px-8 md:px-4 border rounded-[32px]  lg:w-[230px] lg:h-[270px] md:h-[250px] sm:w-[300px] shadow-md">
+                        <div><img src="../public/assets/plane.png" alt="" width="30"></div>
+                        <div class="text-center">
+                            <div class="font-bold text-abu font-poppins p-6 md:p-4 lg:text-[18px] md:text-[14px]">Flight Ticket</div>
+                            <div class="text-abu opacity-50 lg:text-[12px] md:text-[10px]">What looked like a mdall patch of purple grass, above five feet.</div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col justify-center items-center py-16 px-8 md:px-4 border rounded-[32px]  lg:w-[230px] lg:h-[270px] md:h-[250px] sm:w-[300px] shadow-md">
+                        <div><img src="../public/assets/hotel.png" alt="" width="30"></div>
+                        <div class="text-center">
+                            <div class="font-bold text-abu font-poppins p-6 md:p-4 lg:text-[18px] md:text-[14px]">Hotel Ticket</div>
+                            <div class="text-abu opacity-50 lg:text-[12px] md:text-[10px]">What looked like a mdall patch of purple grass, above five feet.</div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col justify-center items-center py-16 px-8 md:px-4 border rounded-[32px]  lg:w-[230px] lg:h-[270px] md:h-[250px] sm:w-[300px] shadow-md">
+                        <div><img src="../public/assets/train.png" alt="" width="30"></div>
+                        <div class="text-center">
+                            <div class="font-bold text-abu font-poppins p-6 md:p-4 lg:text-[18px] md:text-[14px]">Train Ticket</div>
+                            <div class="text-abu opacity-50 lg:text-[12px] md:text-[10px]">What looked like a small patch of purple grass, above five feet.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <section class="lg:p-16 py-16 px-4 overflow-x-hidden">
+                <div class="container mx-auto">
+                    <div class="grid grid-cols-12 text-center lg:text-left">
+                        <div class="lg:col-span-4 col-span-12 gap-4 flex flex-col justify-center lg:px-4">
+                            <span class="text-biru font-poppins font-semibold leading-tight">TOP DESTINATION</span>
+                            <h1 class="font-bold leading-tight text-[32px] tracking-wide">Explore Top Destination </h1>
+                            <div class="col-span-12  flex justify-center gap-2 ">
+                                <div class="border py-2 px-8 rounded-full bg-biru text-white">Bali</div>
+                                <div class="border py-2 px-8 rounded-full ">Liverpool</div>
+                                <div class="border py-2 px-8 rounded-full ">France</div>
+                                <div class="border py-2 px-8 rounded-full ">All</div>
+                            </div>
+                        </div>
+                        <div class=" col-span-12 lg:col-span-8  flex flex-col sm:flex-row w-auto gap-5 lg:mt-0 mt-12 items-center">
+                            <div class="flex flex-col justify-center items-center py-16 px-8 md:px-4 border rounded-[32px]  lg:w-[230px] lg:h-[270px] md:h-[250px] sm:w-[300px] shadow-md">
+                                <div><img src="../public/assets/plane.png" alt="" width="30"></div>
+                                <div class="text-center">
+                                    <div class="font-bold text-abu font-poppins p-6 md:p-4 lg:text-[18px] md:text-[14px]">Flight Ticket</div>
+                                    <div class="text-abu opacity-50 lg:text-[12px] md:text-[10px]">What looked like a mdall patch of purple grass, above five feet.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>        
+                        
+            </section>
+            
+
+            
+        </div> 
+    </section>
+
+
+</body>
+</html>
